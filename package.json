@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/repla-app/repla-node/issues"
   },
-  "homepage": "https://github.com/repla-app/repla-node#readme"
+  "homepage": "https://github.com/repla-app/repla-node#readme",
+  "devDependencies": {
+    "jest": "^26.4.2"
+  }
 }
