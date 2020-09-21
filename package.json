@@ -1,0 +1,22 @@
+{
+  "name": "repla-node",
+  "version": "0.0.1",
+  "description": "Repla Node integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/repla-app/repla-node.git"
+  },
+  "keywords": [
+    "Repla"
+  ],
+  "author": "Roben Kleene",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/repla-app/repla-node/issues"
+  },
+  "homepage": "https://github.com/repla-app/repla-node#readme"
+}
