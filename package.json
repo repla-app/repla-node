@@ -22,6 +22,7 @@
   "homepage": "https://github.com/repla-app/repla-node#readme",
   "devDependencies": {
     "eslint": "^7.9.0",
-    "jest": "^26.4.2"
+    "jest": "^26.4.2",
+    "prettier": "2.1.2"
   }
 }
