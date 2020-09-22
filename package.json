@@ -6,8 +6,7 @@
   "scripts": {
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
     "lint": "eslint .",
-    "autocorrect": "prettier . --write && eslint . --fix",
-    "format": "prettier . --write"
+    "autocorrect": "eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -25,8 +24,9 @@
   "homepage": "https://github.com/repla-app/repla-node#readme",
   "devDependencies": {
     "eslint": "^7.9.0",
-    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.4.2",
     "prettier": "2.1.2"
   }
