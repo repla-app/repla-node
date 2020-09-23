@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 .PHONY: ci irc_started irc_finished
 
 ci: irc_started test irc_finished
