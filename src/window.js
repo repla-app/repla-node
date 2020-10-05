@@ -1,5 +1,11 @@
 export default class Window {
-  loadUrl() { 
+  constructor(windowId) {
+    this.windowId = windowId;
+  }
+  loadUrl() {
     return null;
   } 
+  windowId() {
+    return null;
+  }
 } 
