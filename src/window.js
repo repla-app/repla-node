@@ -4,8 +4,8 @@ export default class Window {
   }
   loadUrl() {
     return null;
-  } 
+  }
   windowId() {
     return null;
   }
-} 
+}

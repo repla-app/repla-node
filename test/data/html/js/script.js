@@ -1,7 +1,7 @@
 function withoutArguments() {
-  return "test"
+  return "test";
 }
 
 function withArguments(one, two) {
-  return one + two
+  return one + two;
 }
