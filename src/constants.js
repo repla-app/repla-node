@@ -1,0 +1,1 @@
+export const WINDOW_ID_KEY = 'REPLA_WINDOW_ID';

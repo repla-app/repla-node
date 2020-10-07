@@ -1,9 +1,9 @@
+import { WINDOW_ID_KEY } from "../src/constants.js";
 import Window from "../src/window.js";
 
-test("adds 1 + 2 to equal 3", () => {
+test("sets windowId from environment", () => {
+  const windowId = 1
+  process.env[WINDOW_ID_KEY] = windowId;
   var window = new Window();
-  console.log("window.windowId = " + window.windowId);
-  let result = window.loadUrl();
-  console.log("result = " + result);
-  expect(result).toBe(null);
+  expect(window.windowId).toBe(windowId);
 });
