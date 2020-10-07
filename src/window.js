@@ -7,7 +7,7 @@ export default class Window {
         if (this._windowId) {
           return this._windowId;
         }
-        this._windowId = process.env[WINDOW_ID_KEY];
+        this._windowId = Number(process.env[WINDOW_ID_KEY]);
         if (this._windowId) {
           return this._windowId;
         }
