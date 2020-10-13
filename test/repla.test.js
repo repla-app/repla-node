@@ -6,6 +6,7 @@ test("sets windowId from environment", () => {
   process.env[Constants.WINDOW_ID_KEY] = windowId;
   const window = new Window();
   expect(window.windowId).toBe(windowId);
+  delete process.env[Constants.WINDOW_ID_KEY];
 });
 
 test("open and close a window", () => {
