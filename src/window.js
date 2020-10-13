@@ -1,5 +1,5 @@
 import { WINDOW_ID_KEY } from "../src/constants.js";
-import Repla from "repla.js"
+import Repla from "./repla.js"
 
 export default class Window {
   constructor(windowId) {
