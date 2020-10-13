@@ -1,6 +1,6 @@
 import { APPLESCRIPT_COMMAND } from "../src/constants.js";
 
-export default Repla = {
+const Repla = {
   createWindow: function() {
     return runAppleScript(CREATE_WINDOW_SCRIPT)
   },
@@ -10,3 +10,5 @@ export default Repla = {
     return result.stdout;
   }
 }
+
+export default Repla;
