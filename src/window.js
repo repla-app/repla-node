@@ -1,4 +1,4 @@
-import { WINDOW_ID_KEY } from "../src/constants.js";
+import Constants from "../src/constants.js";
 import Repla from "./repla.js"
 
 export default class Window {
@@ -8,7 +8,7 @@ export default class Window {
         if (this._windowId) {
           return this._windowId;
         }
-        this._windowId = Number(process.env[WINDOW_ID_KEY]);
+        this._windowId = Number(process.env[Constants.WINDOW_ID_KEY]);
         if (this._windowId) {
           return this._windowId;
         }
@@ -24,6 +24,6 @@ export default class Window {
     return null;
   }
   close() {
-    Repla.runAppleScript(CLOSE_WINDOW_SCRIPT);
+    Repla.runAppleScript(Constants.CLOSE_WINDOW_SCRIPT);
   }
 }
