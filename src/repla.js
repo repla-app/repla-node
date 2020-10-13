@@ -5,9 +5,8 @@ export default Repla = {
     
   },
   _runAppleScript: function(args) {
-    const { spawn } = require('child_process');
-    const result = spawn(APPLESCRIPT_COMMAND, args);
-    // TODO: Make this return STDOUT
-    return result;
+    const { spawnSync } = require('child_process');
+    const result = spawnSync(APPLESCRIPT_COMMAND, args);
+    return result.stdout;
   }
 }
