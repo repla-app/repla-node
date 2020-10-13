@@ -1,14 +1,14 @@
-import constants from "../src/constants.js";
+import Constants from "../src/constants.js";
+import { spawnSync } from "child_process";
 
 const Repla = {
-  createWindow: function() {
-    return runAppleScript(Constants.CREATE_WINDOW_SCRIPT)
+  createWindow: function () {
+    return runAppleScript(Constants.CREATE_WINDOW_SCRIPT);
   },
-  runAppleScript: function(args) {
-    const { spawnSync } = require('child_process');
+  runAppleScript: function (args) {
     const result = spawnSync(Constants.APPLESCRIPT_COMMAND, args);
     return result.stdout;
-  }
-}
+  },
+};
 
 export default Repla;
