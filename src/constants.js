@@ -1,7 +1,7 @@
 export const WINDOW_ID_KEY = "REPLA_WINDOW_ID";
+import path from "path";
 
 // AppleScript
-const path = require("path");
 const APPLESCRIPT_DIRECTORY = path.join(__dirname, "lib/applescript");
 export const APPLESCRIPT_COMMAND = "/usr/bin/osascript";
 export const CREATE_WINDOW_SCRIPT = path.join(
