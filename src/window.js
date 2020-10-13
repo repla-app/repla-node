@@ -24,6 +24,6 @@ export default class Window {
     return null;
   }
   close() {
-    Repla.runAppleScript(Constants.CLOSE_WINDOW_SCRIPT);
+    Repla.runAppleScript([Constants.CLOSE_WINDOW_SCRIPT]);
   }
 }

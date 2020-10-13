@@ -3,7 +3,7 @@ import { spawnSync } from "child_process";
 
 const Repla = {
   createWindow: function () {
-    return runAppleScript(Constants.CREATE_WINDOW_SCRIPT);
+    return runAppleScript([Constants.CREATE_WINDOW_SCRIPT]);
   },
   runAppleScript: function (args) {
     const result = spawnSync(Constants.APPLESCRIPT_COMMAND, args);
