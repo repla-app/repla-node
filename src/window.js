@@ -1,4 +1,5 @@
 import { WINDOW_ID_KEY } from "../src/constants.js";
+import Repla from "repla.js"
 
 export default class Window {
   constructor(windowId) {
@@ -11,6 +12,7 @@ export default class Window {
         if (this._windowId) {
           return this._windowId;
         }
+        this._windowId = Repla.createWindow();
         return this._windowId;
       },
     });
@@ -20,5 +22,8 @@ export default class Window {
   }
   windowId() {
     return null;
+  }
+  close() {
+    Repla.runAppleScript(CLOSE_WINDOW_SCRIPT);
   }
 }
