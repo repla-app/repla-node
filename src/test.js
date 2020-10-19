@@ -2,7 +2,7 @@ import Constants from "../src/constants.js";
 
 const Test = {
   blockUntil: async function (
-    timeout,
+    timeout = Constants.TIMEOUT,
     pollingInterval = Constants.POLLING_INTERVAL,
     testFn
   ) {
