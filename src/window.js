@@ -3,6 +3,7 @@ import Repla from "./repla.js"
 
 export default class Window {
   constructor(windowId) {
+    this._windowId = windowId;
     Object.defineProperty(this, "windowId", {
       get: function () {
         if (this._windowId) {

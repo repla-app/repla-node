@@ -3,6 +3,10 @@ const Constants = {};
 // Keys
 Constants.WINDOW_ID_KEY = "REPLA_WINDOW_ID";
 
+// Tests
+Constants.TIMEOUT = "4.0";
+Constants.POLLING_INTERVAL = "0.5";
+
 // AppleScript
 
 import path from 'path';
