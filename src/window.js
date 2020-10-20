@@ -18,8 +18,17 @@ export default class Window {
       },
     });
   }
-  loadUrl() {
-    return null;
+  loadUrl(url, options) {
+    let args = [url];
+    let shouldClearCache = options['shouldClearCache']
+    var script;
+    if (shouldClearCache) {
+      script = Constants.LOAD_URL_SCRIPT;
+    } else {
+      args.push(shouldClearCache);
+      script = Constants.LOAD_URL_CACHE_SCRIPT;
+    }
+    return Repla.runAppleScript([script, args]);
   }
   windowId() {
     return null;
