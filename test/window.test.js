@@ -15,3 +15,7 @@ test("Open and close a window", () => {
   expect(windowId).not.toBeNull();
   window.close()
 });
+
+// test("Load a file and URL", () => {
+
+// });
