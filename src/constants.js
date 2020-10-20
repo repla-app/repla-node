@@ -32,6 +32,7 @@ Constants.DO_JAVASCRIPT = path.join(
   APPLESCRIPT_DIRECTORY,
   "do_javascript.scpt"
 );
+Constants.LOAD_FILE_SCRIPT = path.join(APPLESCRIPT_DIRECTORY, "load.scpt");
 Constants.RELOAD_SCRIPT = path.join(APPLESCRIPT_DIRECTORY, "reload.scpt");
 Constants.GO_BACK_SCRIPT = path.join(APPLESCRIPT_DIRECTORY, "go_back.scpt");
 Constants.GO_FORWARD = path.join(APPLESCRIPT_DIRECTORY, "go_forward.scpt");

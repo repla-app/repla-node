@@ -30,6 +30,10 @@ export default class Window {
     }
     return Repla.runAppleScript([script, args]);
   }
+  loadFile(file) {
+    let args = [file];
+    return Repla.runAppleScript([Constants.LOAD_FILE_SCRIPT, args]);
+  }
   windowId() {
     return null;
   }
