@@ -11,7 +11,7 @@ const Repla = {
       console.log(Constants.APPLESCRIPT_COMMAND, args);
     }
     const result = spawnSync(Constants.APPLESCRIPT_COMMAND, args);
-    const output = result.stdout
+    const output = result.stdout;
 
     const resultInt = parseInt(output);
     if (resultInt) {
@@ -19,6 +19,15 @@ const Repla = {
     }
 
     return result.stdout;
+  },
+  loadPlugin: function (path) {
+    return this.runAppleScript([Constants.LOAD_PLUGIN_SCRIPT, path]);
+  },
+  runPlugin: function (name, directory, parameters) {
+    let args = [name, directory, parameters].flat().filter(function (el) {
+      return el != null;
+    });
+    return this.runAppleScript([Constants.RUN_PLUGIN_SCRIPT, args]);
   },
 };
 
