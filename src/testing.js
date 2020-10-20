@@ -1,6 +1,6 @@
 import Constants from "../src/constants.js";
 
-const Test = {
+const Testing = {
   blockUntil: async function (
     timeout = Constants.TIMEOUT,
     pollingInterval = Constants.POLLING_INTERVAL,
@@ -13,4 +13,4 @@ const Test = {
   },
 };
 
-export default Test;
+export default Testing;
