@@ -1,5 +1,7 @@
 import Constants from "../src/constants.js";
+import TestConstants from "src/testing-constants.js"
 import Window from "../src/window.js";
+import Repla from "../src/repla.js";
 
 test("Sets window ID from environment", () => {
   const windowId = 1
@@ -16,6 +18,11 @@ test("Open and close a window", () => {
   window.close()
 });
 
-// test("Load a file and URL", () => {
-
-// });
+test("Load a file and URL", () => {
+  Repla.loadPlugin(TestConstants.SERVER_PLUGIN_FILE)
+  let windowId = Repla.runPlugin(TestConstants.SERVER_PLUGIN_NAME, TestConstants.HTML_DIRECTORY)
+  let window = new Window(windowId);
+  expect(window.windowId).toBe(windowId);
+  // TODO: Get contents of TestConstants.TITLE_JS_FILE
+  window.close();
+});
