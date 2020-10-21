@@ -3,4 +3,4 @@
 	url = https://github.com/repla-app/repla-applescript.git
 [submodule "test/data/packages"]
 	path = test/data/packages
-	url = https://github.com/repla-app/repla-test-packages.git
+	url = https://github.com/repla-app/repla-test-data.git
