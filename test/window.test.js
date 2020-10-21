@@ -1,5 +1,5 @@
 import Constants from "../src/constants.js";
-import TestConstants from "src/testing-constants.js"
+import TestConstants from "./src/testing-constants.js"
 import Window from "../src/window.js";
 import Repla from "../src/repla.js";
 
