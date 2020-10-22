@@ -20,6 +20,7 @@ test("Open and close a window", () => {
 });
 
 test("Load a file and URL", () => {
+  Repla.debug = true; // FIXME:
   Repla.loadPlugin(TestConstants.SERVER_PLUGIN_FILE);
   const windowId = Repla.runPlugin(
     TestConstants.SERVER_PLUGIN_NAME,
@@ -33,4 +34,5 @@ test("Load a file and URL", () => {
   // TODO: Add back when coerce function is tested
   // expect(result).toBe(TestConstants.HTML_TITLE);
   window.close();
+  Repla.debug = false; // FIXME:
 });

@@ -7,10 +7,16 @@ const Repla = {
     return this.runAppleScript([Constants.CREATE_WINDOW_SCRIPT]);
   },
   runAppleScript: function (args) {
+    const result = spawnSync(Constants.APPLESCRIPT_COMMAND, args);
     if (this.debug) {
       console.log(Constants.APPLESCRIPT_COMMAND, args);
+      if (result.stderr) {
+        console.log("stderr: " + result.stderr.toString())
+      }
+      if (result.stdout) {
+        console.log("stdout: " + result.stdout.toString())
+      }
     }
-    const result = spawnSync(Constants.APPLESCRIPT_COMMAND, args);
     const output = result.stdout;
 
     const resultInt = parseInt(output);
