@@ -17,8 +17,9 @@ const Repla = {
     if (resultInt) {
       return resultInt;
     }
-
-    return result.stdout;
+    return output
+    // TODO: Replace above
+    // return this._coerce(output);
   },
   loadPlugin: function (path) {
     return this.runAppleScript([Constants.LOAD_PLUGIN_SCRIPT, path]);
@@ -29,6 +30,14 @@ const Repla = {
     });
     return this.runAppleScript([Constants.RUN_PLUGIN_SCRIPT, args]);
   },
+  // Private
+  _coerce: function (value) {
+    const resultInt = parseInt(value);
+    if (resultInt) {
+      return resultInt;
+    }
+    return value.toString();
+  }
 };
 
 export default Repla;

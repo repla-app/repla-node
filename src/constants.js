@@ -40,7 +40,7 @@ Constants.LOAD_URL_CACHE_SCRIPT = path.join(
   APPLESCRIPT_DIRECTORY,
   "load_url_clearing_cache.scpt"
 );
-Constants.DO_JAVASCRIPT = path.join(
+Constants.DO_JAVASCRIPT_SCRIPT = path.join(
   APPLESCRIPT_DIRECTORY,
   "do_javascript.scpt"
 );
