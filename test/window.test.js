@@ -27,7 +27,9 @@ test("Load a file and URL", () => {
   );
   let window = new Window(windowId);
   expect(window.windowId).toBe(windowId);
-  let getTitleJS = fs.readFileSync(TestConstants.TITLE_JS_FILE).toString();
-  console.log("getTitleJS = " + getTitleJS);
+  let titleJS = fs.readFileSync(TestConstants.TITLE_JS_FILE).toString();
+  window.loadFile(TestConstants.HTML_FILE);
+  let result = window.doJavaScript(titleJS);
+  expect(result).toBe(TestConstants.HTML_TITLE);
   window.close();
 });

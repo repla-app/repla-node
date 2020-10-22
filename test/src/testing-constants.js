@@ -24,6 +24,8 @@ TestConstants.HTML_JQUERY_FILE = path.join(
   TestConstants.HTML_DIRECTORY,
   HTML_JQUERY_FILENAME
 );
+TestConstants.HTML_TITLE = "Index";
+TestConstants.HTML_JQUERY_TITLE = "Index JQuery";
 // JS
 TestConstants.JS_DIRECTORY = path.join(DATA_DIRECTORY, "js");
 TestConstants.TITLE_JS_FILE = path.join(TestConstants.JS_DIRECTORY, "title.js");
