@@ -26,5 +26,5 @@ TestConstants.HTML_JQUERY_FILE = path.join(
 );
 // JS
 TestConstants.JS_DIRECTORY = path.join(DATA_DIRECTORY, "js");
-TestConstants.TITLE_JS_FILE = path.join(DATA_DIRECTORY, "title.js");
+TestConstants.TITLE_JS_FILE = path.join(TestConstants.JS_DIRECTORY, "title.js");
 export default TestConstants;
