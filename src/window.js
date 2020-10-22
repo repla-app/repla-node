@@ -19,9 +19,9 @@ export default class Window {
     });
   }
   loadUrl(url, options) {
-    let args = [url];
-    let shouldClearCache = options['shouldClearCache']
-    var script;
+    const args = [url];
+    const shouldClearCache = options['shouldClearCache']
+    let script;
     if (shouldClearCache) {
       script = Constants.LOAD_URL_SCRIPT;
     } else {
@@ -31,7 +31,7 @@ export default class Window {
     return Repla.runAppleScript([script, args]);
   }
   loadFile(file) {
-    let args = [file];
+    const args = [file];
     return Repla.runAppleScript([Constants.LOAD_FILE_SCRIPT, args]);
   }
   doJavaScript(javaScript) {

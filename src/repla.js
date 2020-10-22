@@ -25,10 +25,11 @@ const Repla = {
     return this.runAppleScript([Constants.LOAD_PLUGIN_SCRIPT, path]);
   },
   runPlugin: function (name, directory, parameters) {
-    let args = [name, directory, parameters].flat().filter(function (el) {
+    const args = [name, directory, parameters].flat().filter(function (el) {
       return el != null;
     });
-    return this.runAppleScript([Constants.RUN_PLUGIN_SCRIPT, args]);
+    // FIXME: This should be returning a Window ID but it's not
+    return this.runAppleScript([Constants.RUN_PLUGIN_SCRIPT, args]);;
   },
   // Private
   _coerce: function (value) {

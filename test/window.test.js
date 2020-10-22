@@ -32,5 +32,5 @@ test("Load a file and URL", () => {
   let result = window.doJavaScript(titleJS);
   // TODO: Add back when coerce function is tested
   // expect(result).toBe(TestConstants.HTML_TITLE);
-  window.close();  
+  window.close();
 });
