@@ -21,15 +21,15 @@ test("Open and close a window", () => {
 
 test("Load a file and URL", () => {
   Repla.loadPlugin(TestConstants.SERVER_PLUGIN_FILE);
-  let windowId = Repla.runPlugin(
+  const windowId = Repla.runPlugin(
     TestConstants.SERVER_PLUGIN_NAME,
     TestConstants.HTML_DIRECTORY
   );
-  let window = new Window(windowId);
+  const window = new Window(windowId);
   expect(window.windowId).toBe(windowId);
-  let titleJS = fs.readFileSync(TestConstants.TITLE_JS_FILE).toString();
+  const titleJS = fs.readFileSync(TestConstants.TITLE_JS_FILE).toString();
   window.loadFile(TestConstants.HTML_FILE);
-  let result = window.doJavaScript(titleJS);
+  const result = window.doJavaScript(titleJS);
   // TODO: Add back when coerce function is tested
   // expect(result).toBe(TestConstants.HTML_TITLE);
   window.close();
