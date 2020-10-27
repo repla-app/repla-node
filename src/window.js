@@ -35,7 +35,7 @@ export default class Window {
     return Repla.runAppleScript([Constants.LOAD_FILE_SCRIPT].concat(args));
   }
   doJavaScript(javaScript) {
-    return Repla.runAppleScript([Constants.DO_JAVASCRIPT_SClIPT, javaScript]);
+    return Repla.runAppleScript([Constants.DO_JAVASCRIPT_SCRIPT, javaScript]);
   }
   windowId() {
     return null;
