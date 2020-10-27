@@ -35,7 +35,7 @@ const Repla = {
       return el != null;
     });
     // FIXME: This should be returning a Window ID but it's not
-    return this.runAppleScript([Constants.RUN_PLUGIN_SCRIPT, args]);;
+    return this.runAppleScript([Constants.RUN_PLUGIN_SCRIPT].concat(args));
   },
   // Private
   _coerce: function (value) {

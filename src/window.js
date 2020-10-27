@@ -28,14 +28,14 @@ export default class Window {
       args.push(shouldClearCache);
       script = Constants.LOAD_URL_CACHE_SCRIPT;
     }
-    return Repla.runAppleScript([script, args]);
+    return Repla.runAppleScript([script].concat(args));
   }
   loadFile(file) {
     const args = [file];
-    return Repla.runAppleScript([Constants.LOAD_FILE_SCRIPT, args]);
+    return Repla.runAppleScript([Constants.LOAD_FILE_SCRIPT].concat(args));
   }
   doJavaScript(javaScript) {
-    return Repla.runAppleScript([Constants.DO_JAVASCRIPT_SCRIPT, javaScript]);
+    return Repla.runAppleScript([Constants.DO_JAVASCRIPT_SClIPT, javaScript]);
   }
   windowId() {
     return null;
