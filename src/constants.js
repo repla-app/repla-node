@@ -1,3 +1,5 @@
+const path = require("path");
+
 const Constants = {};
 
 // Keys
@@ -10,10 +12,6 @@ Constants.POLLING_INTERVAL = "0.5";
 // AppleScript
 
 // General
-import path from "path";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const APPLESCRIPT_DIRECTORY = path.join(__dirname, "lib/applescript");
 Constants.APPLESCRIPT_COMMAND = "/usr/bin/osascript";
 // Plugin
@@ -49,4 +47,4 @@ Constants.RELOAD_SCRIPT = path.join(APPLESCRIPT_DIRECTORY, "reload.scpt");
 Constants.GO_BACK_SCRIPT = path.join(APPLESCRIPT_DIRECTORY, "go_back.scpt");
 Constants.GO_FORWARD = path.join(APPLESCRIPT_DIRECTORY, "go_forward.scpt");
 
-export default Constants;
+module.exports = Constants;

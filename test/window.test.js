@@ -1,8 +1,8 @@
-import Constants from "../src/constants.js";
-import TestConstants from "./src/testing-constants.js";
-import Window from "../src/window.js";
-import Repla from "../src/repla.js";
-import fs from "fs";
+const Constants = require("../src/constants.js");
+const TestConstants = require("./src/testing-constants.js");
+const Window = require("../src/window.js");
+const Repla = require("../src/repla.js");
+const fs = require("fs");
 
 test("Sets window ID from environment", () => {
   const windowId = 1;

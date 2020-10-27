@@ -1,7 +1,7 @@
-import Constants from "../src/constants.js";
-import Repla from "./repla.js"
+const Constants = require("../src/constants.js");
+const Repla = require("./repla.js");
 
-export default class Window {
+module.exports = class Window {
   constructor(windowId) {
     this._windowId = windowId;
     Object.defineProperty(this, "windowId", {

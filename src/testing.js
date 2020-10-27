@@ -1,4 +1,4 @@
-import Constants from "../src/constants.js";
+const Constants = require("../src/constants.js");
 
 const Testing = {
   blockUntil: async function (
@@ -13,4 +13,4 @@ const Testing = {
   },
 };
 
-export default Testing;
+module.exports = Testing;

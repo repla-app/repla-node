@@ -1,8 +1,6 @@
+const path = require("path");
+
 const TestConstants = {};
-import path from "path";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIRECTORY = path.join(__dirname, "../data/");
 
 // Packages
@@ -29,4 +27,4 @@ TestConstants.HTML_JQUERY_TITLE = "Index JQuery";
 // JS
 TestConstants.JS_DIRECTORY = path.join(DATA_DIRECTORY, "js");
 TestConstants.TITLE_JS_FILE = path.join(TestConstants.JS_DIRECTORY, "title.js");
-export default TestConstants;
+module.exports = TestConstants;

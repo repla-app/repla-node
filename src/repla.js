@@ -1,5 +1,5 @@
-import Constants from "../src/constants.js";
-import { spawnSync } from "child_process";
+const Constants = require("../src/constants.js");
+const spawnSync = require('child_process').spawnSync;
 
 const Repla = {
   debug: false,
@@ -47,4 +47,4 @@ const Repla = {
   }
 };
 
-export default Repla;
+module.exports = Repla;
