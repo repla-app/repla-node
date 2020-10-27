@@ -10,13 +10,15 @@ const Repla = {
     const result = spawnSync(Constants.APPLESCRIPT_COMMAND, args);
     if (this.debug) {
       console.log(Constants.APPLESCRIPT_COMMAND, args);
-      if (result.stdout) {
+      if (result.stdout && result.stdout.length > 0) {
         console.log(result.stdout.toString())
       }
     }
-    console.log(result.stderr.toString())
-    const output = result.stdout;
+    if (result.stderr && result.stderr.length > 0) {
+      console.log(result.stderr.toString())
+    }
 
+    const output = result.stdout;
     const resultInt = parseInt(output);
     if (resultInt) {
       return resultInt;
