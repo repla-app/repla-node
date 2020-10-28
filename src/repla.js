@@ -19,13 +19,7 @@ const Repla = {
     }
 
     const output = result.stdout;
-    const resultInt = parseInt(output);
-    if (resultInt) {
-      return resultInt;
-    }
-    return output
-    // TODO: Replace above
-    // return this._coerce(output);
+    return this._coerce(output);
   },
   loadPlugin: function (path) {
     return this.runAppleScript([Constants.LOAD_PLUGIN_SCRIPT, path]);
@@ -43,7 +37,8 @@ const Repla = {
     if (resultInt) {
       return resultInt;
     }
-    return value.toString();
+    // TODO: value.toString();?
+    return value;
   }
 };
 
