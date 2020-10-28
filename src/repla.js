@@ -37,8 +37,7 @@ const Repla = {
     if (resultInt) {
       return resultInt;
     }
-    // TODO: value.toString();?
-    return value;
+    return value.toString();
   }
 };
 
