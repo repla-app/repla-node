@@ -31,7 +31,6 @@ test("Load a file and URL", () => {
   const titleJS = fs.readFileSync(TestConstants.TITLE_JS_FILE).toString();
   window.loadFile(TestConstants.HTML_FILE);
   const result = window.doJavaScript(titleJS);
-  // TODO: Add back when coerce function is tested
   // expect(result).toBe(TestConstants.HTML_TITLE);
   window.close();
   Repla.debug = false; // FIXME:

@@ -28,19 +28,29 @@ module.exports = class Window {
       args.push(shouldClearCache);
       script = Constants.LOAD_URL_CACHE_SCRIPT;
     }
-    return Repla.runAppleScript([script].concat(args));
+    return this._runScript(script, args);
   }
   loadFile(file) {
     const args = [file];
-    return Repla.runAppleScript([Constants.LOAD_FILE_SCRIPT].concat(args));
+    return this._runScript(Constants.LOAD_FILE_SCRIPT, args);
   }
   doJavaScript(javaScript) {
-    return Repla.runAppleScript([Constants.DO_JAVASCRIPT_SCRIPT, javaScript]);
-  }
-  windowId() {
-    return null;
+    return this._runScript(Constants.DO_JAVASCRIPT_SCRIPT, [javaScript]);
   }
   close() {
-    Repla.runAppleScript([Constants.CLOSE_WINDOW_SCRIPT, this.windowId]);
+    this._runScript(Constants.CLOSE_WINDOW_SCRIPT);
+  }
+  // Private
+  _runScript(script, args) {
+    args = this._argumentsWithTarget(args);
+    return Repla.runAppleScript([script].concat(args));
+  }
+  _argumentsWithTarget(args) {
+    if (args) {
+      args.push(this.windowId);
+    } else {
+      args = [this.windowId];
+    }
+    return args;
   }
 }
