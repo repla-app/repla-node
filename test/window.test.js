@@ -4,17 +4,17 @@ const Window = require("../src/window.js");
 const Repla = require("../src/repla.js");
 const fs = require("fs");
 
-describe('Nothing', () => {
+describe("Nothing", () => {
   test("Sets window ID from environment", () => {
     const windowId = 1;
     process.env[Constants.WINDOW_ID_KEY] = windowId;
     const window = new Window();
     expect(window.windowId).toBe(windowId);
     delete process.env[Constants.WINDOW_ID_KEY];
-  });  
+  });
 });
 
-describe('Make window', () => {
+describe("Make window", () => {
   let window;
   beforeEach(() => {
     window = new Window();
@@ -23,7 +23,7 @@ describe('Make window', () => {
   afterEach(() => {
     window.close();
   });
-  
+
   test("Open and close a window", () => {
     const windowId = window.windowId;
     expect(windowId).not.toBeNull();
@@ -33,7 +33,7 @@ describe('Make window', () => {
 // describe('Load plugin and make window', () => {
 // });
 
-describe('Load plugin and make window', () => {
+describe("Load plugin and make window", () => {
   let window;
   beforeEach(() => {
     Repla.debug = true; // FIXME:
@@ -43,7 +43,7 @@ describe('Load plugin and make window', () => {
       TestConstants.HTML_DIRECTORY
     );
     window = new Window(windowId);
-    expect(window.windowId).toBe(windowId);  
+    expect(window.windowId).toBe(windowId);
   });
 
   afterEach(() => {
@@ -60,6 +60,5 @@ describe('Load plugin and make window', () => {
     console.log("TestConstants.HTML_TITLE = " + TestConstants.HTML_TITLE);
     // expect("Index A").toBe("Index B");
     expect(result.toString()).toBe(TestConstants.HTML_TITLE.toString());
-  });  
+  });
 });
-
