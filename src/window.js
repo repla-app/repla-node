@@ -18,14 +18,14 @@ module.exports = class Window {
       },
     });
   }
-  loadUrl(url, options) {
+  loadURL(url, options) {
     const args = [url];
-    const shouldClearCache = options["shouldClearCache"];
     let script;
-    if (shouldClearCache) {
+    if (options && 'shouldClearCache' in options) {
+      const shouldClearCache = options["shouldClearCache"];
+      args.push(shouldClearCache);
       script = Constants.LOAD_URL_SCRIPT;
     } else {
-      args.push(shouldClearCache);
       script = Constants.LOAD_URL_CACHE_SCRIPT;
     }
     return this._runScript(script, args);
