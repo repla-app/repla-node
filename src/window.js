@@ -20,7 +20,7 @@ module.exports = class Window {
   }
   loadUrl(url, options) {
     const args = [url];
-    const shouldClearCache = options['shouldClearCache']
+    const shouldClearCache = options["shouldClearCache"];
     let script;
     if (shouldClearCache) {
       script = Constants.LOAD_URL_SCRIPT;
@@ -53,4 +53,4 @@ module.exports = class Window {
     }
     return args;
   }
-}
+};
