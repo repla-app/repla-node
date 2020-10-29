@@ -1,5 +1,5 @@
 const Constants = require("../src/constants.js");
-const spawnSync = require('child_process').spawnSync;
+const spawnSync = require("child_process").spawnSync;
 
 const Repla = {
   debug: false,
@@ -11,11 +11,11 @@ const Repla = {
     if (this.debug) {
       console.log(Constants.APPLESCRIPT_COMMAND, args);
       if (result.stdout && result.stdout.length > 0) {
-        console.log(result.stdout.toString())
+        console.log(result.stdout.toString());
       }
     }
     if (result.stderr && result.stderr.length > 0) {
-      console.log(result.stderr.toString())
+      console.log(result.stderr.toString());
     }
 
     const output = result.stdout;
@@ -37,8 +37,8 @@ const Repla = {
     if (resultInt) {
       return resultInt;
     }
-    return value.toString();
-  }
+    return value.toString().replace(/\n$/, "");
+  },
 };
 
 module.exports = Repla;

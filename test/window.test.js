@@ -30,13 +30,9 @@ describe("Make window", () => {
   });
 });
 
-// describe('Load plugin and make window', () => {
-// });
-
 describe("Load plugin and make window", () => {
   let window;
   beforeEach(() => {
-    Repla.debug = true; // FIXME:
     Repla.loadPlugin(TestConstants.SERVER_PLUGIN_FILE);
     const windowId = Repla.runPlugin(
       TestConstants.SERVER_PLUGIN_NAME,
@@ -48,17 +44,12 @@ describe("Load plugin and make window", () => {
 
   afterEach(() => {
     window.close();
-    Repla.debug = false; // FIXME:
   });
 
   test("Load a file and URL", () => {
     const titleJS = fs.readFileSync(TestConstants.TITLE_JS_FILE).toString();
     window.loadFile(TestConstants.HTML_FILE);
     const result = window.doJavaScript(titleJS);
-    // FIXME: Why don't these values match?
-    console.log("result = " + result);
-    console.log("TestConstants.HTML_TITLE = " + TestConstants.HTML_TITLE);
-    // expect("Index A").toBe("Index B");
-    expect(result.toString()).toBe(TestConstants.HTML_TITLE.toString());
+    expect(result).toBe(TestConstants.HTML_TITLE);
   });
 });
