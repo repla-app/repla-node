@@ -27,4 +27,11 @@ TestConstants.HTML_JQUERY_TITLE = "Index JQuery";
 // JS
 TestConstants.JS_DIRECTORY = path.join(DATA_DIRECTORY, "js");
 TestConstants.TITLE_JS_FILE = path.join(TestConstants.JS_DIRECTORY, "title.js");
+// URL
+function serverURL(path) {
+  return 'http://127.0.0.1:5000/' + path
+}
+TestConstants.HTML_URL = serverURL(HTML_FILENAME);
+TestConstants.HTML_JQUERY_URL = serverURL(HTML_JQUERY_FILENAME);
+
 module.exports = TestConstants;

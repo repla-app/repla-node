@@ -51,5 +51,6 @@ describe("Load plugin and make window", () => {
     window.loadFile(TestConstants.HTML_FILE);
     const result = window.doJavaScript(titleJS);
     expect(result).toBe(TestConstants.HTML_TITLE);
+    // FIXME: window.loadURL(TestConstants.)
   });
 });
