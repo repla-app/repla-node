@@ -49,8 +49,10 @@ describe("Load plugin and make window", () => {
   test("Load a file and URL", () => {
     const titleJS = fs.readFileSync(TestConstants.TITLE_JS_FILE).toString();
     window.loadFile(TestConstants.HTML_FILE);
-    const result = window.doJavaScript(titleJS);
+    let result = window.doJavaScript(titleJS);
     expect(result).toBe(TestConstants.HTML_TITLE);
-    // FIXME: window.loadURL(TestConstants.)
+    window.loadURL(TestConstants.HTML_JQUERY_URL)
+    result = window.doJavaScript(titleJS);
+    expect(result).toBe(TestConstants.HTML_JQUERY_TITLE);
   });
 });
