@@ -24,9 +24,9 @@ module.exports = class Window {
     if (options && 'shouldClearCache' in options) {
       const shouldClearCache = options["shouldClearCache"];
       args.push(shouldClearCache);
-      script = Constants.LOAD_URL_SCRIPT;
-    } else {
       script = Constants.LOAD_URL_CACHE_SCRIPT;
+    } else {
+      script = Constants.LOAD_URL_SCRIPT;
     }
     return this._runScript(script, args);
   }
