@@ -21,7 +21,7 @@ module.exports = class Window {
   loadURL(url, options) {
     const args = [url];
     let script;
-    if (options && 'shouldClearCache' in options) {
+    if (options && "shouldClearCache" in options) {
       const shouldClearCache = options["shouldClearCache"];
       args.push(shouldClearCache);
       script = Constants.LOAD_URL_CACHE_SCRIPT;
