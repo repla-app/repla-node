@@ -59,6 +59,14 @@ describe("Load plugin and make window", () => {
       "shouldClearCache": true
     }
     window.loadURL(TestConstants.HTML_URL, options)
+    let result = window.doJavaScript(titleJS);
+    expect(result).toBe(TestConstants.HTML_TITLE);
+    newTitle = "Changed"
+    expect(newTitle).not.toBe(result);
+    window.doJavaScript(`document.title = '${newTitle}'`);
+    result = window.doJavaScript(titleJS);
+    expect(result).toBe(newTitle);
+    window.reload();
     result = window.doJavaScript(titleJS);
     expect(result).toBe(TestConstants.HTML_TITLE);
   });

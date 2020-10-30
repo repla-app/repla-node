@@ -40,6 +40,9 @@ module.exports = class Window {
   close() {
     this._runScript(Constants.CLOSE_WINDOW_SCRIPT);
   }
+  reload() {
+    this._runScript(Constants.RELOAD_SCRIPT);
+  }
   // Private
   _runScript(script, args) {
     args = this._argumentsWithTarget(args);
