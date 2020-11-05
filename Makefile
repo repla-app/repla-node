@@ -35,3 +35,4 @@ irc_started:
 
 irc_finished:
 	@$(call irc_message,CIFINISHED)
+
