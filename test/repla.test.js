@@ -1,17 +1,14 @@
-import Constants from "../src/constants.js";
-import Window from "../src/window.js";
+const Repla = require("../src/repla.js");
 
-test("sets windowId from environment", () => {
-  const windowId = 1
-  process.env[Constants.WINDOW_ID_KEY] = windowId;
-  const window = new Window();
-  expect(window.windowId).toBe(windowId);
-  delete process.env[Constants.WINDOW_ID_KEY];
-});
-
-test("open and close a window", () => {
-  const window = new Window();
-  const windowId = window.windowId;
-  expect(windowId).not.toBeNull();
-  window.close()
+test("Test coerce", () => {
+  const numberString = "15";
+  const number = 10;
+  const lineBreakString = "Hello World!\n";
+  const string = "Hello World!";
+  const buffer = Buffer.from(string, "utf-8");
+  expect(Repla._coerce(number)).toBe(10);
+  expect(Repla._coerce(numberString)).toBe(15);
+  expect(Repla._coerce(string)).toBe(string);
+  expect(Repla._coerce(buffer)).toBe(string);
+  expect(Repla._coerce(lineBreakString)).toBe(string);
 });

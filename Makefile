@@ -1,8 +1,11 @@
 SHELL := /bin/bash
 
-.PHONY: ci irc_started irc_finished
+.PHONY: ci irc_started irc_finished test lint
 
-ci: irc_started test irc_finished
+ci: irc_started lint irc_finished
+
+lint:
+	npm run lint
 
 test:
 	npm test
@@ -32,3 +35,4 @@ irc_started:
 
 irc_finished:
 	@$(call irc_message,CIFINISHED)
+

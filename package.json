@@ -4,7 +4,7 @@
   "description": "Repla Node integration",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
+    "test": "jest",
     "lint": "eslint .",
     "autocorrect": "prettier . --write"
   },
@@ -15,7 +15,6 @@
   "keywords": [
     "Repla"
   ],
-  "type": "module",
   "author": "Roben Kleene",
   "license": "ISC",
   "bugs": {

@@ -1,3 +1,6 @@
 [submodule "src/lib/applescript"]
 	path = src/lib/applescript
 	url = https://github.com/repla-app/repla-applescript.git
+[submodule "test/data/packages"]
+	path = test/data
+	url = https://github.com/repla-app/repla-test-data.git
