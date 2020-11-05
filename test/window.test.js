@@ -61,7 +61,7 @@ describe("Load plugin and make window", () => {
     window.loadURL(TestConstants.HTML_URL, options);
     let result = window.doJavaScript(titleJS);
     expect(result).toBe(TestConstants.HTML_TITLE);
-    newTitle = "Changed";
+    const newTitle = "Changed";
     expect(newTitle).not.toBe(result);
     window.doJavaScript(`document.title = '${newTitle}'`);
     result = window.doJavaScript(titleJS);
