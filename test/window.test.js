@@ -1,5 +1,6 @@
 const Constants = require("../src/constants.js");
 const TestConstants = require("./src/testing-constants.js");
+const Testing = require("./src/testing.js");
 const Window = require("../src/window.js");
 const Repla = require("../src/repla.js");
 const fs = require("fs");
@@ -58,6 +59,11 @@ describe("Load plugin and make window", () => {
     const options = {
       shouldClearCache: true,
     };
+    Testing.blockUntil(()  => {
+      let result = window.doJavaScript(titleJS);
+      return /^\d+$/.test(result);
+    });
+    console.log("TestConstants.HTML_URL, options = " + TestConstants.HTML_URL, options);
     window.loadURL(TestConstants.HTML_URL, options);
     let result = window.doJavaScript(titleJS);
     expect(result).toBe(TestConstants.HTML_TITLE);

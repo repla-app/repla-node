@@ -1,4 +1,4 @@
-const Constants = require("../src/constants.js");
+const Constants = require("../../src/constants.js");
 
 const Testing = {
   blockUntil: async function (
