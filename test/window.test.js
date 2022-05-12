@@ -45,7 +45,7 @@ describe("Load plugin and make window", () => {
   });
 
   afterEach(() => {
-    window.close();
+    // window.close();
   });
 
   test("Load a file and URL", () => {
@@ -59,7 +59,7 @@ describe("Load plugin and make window", () => {
     const options = {
       shouldClearCache: true,
     };
-    Testing.blockUntil(()  => {
+    Testing.blockUntil(() => {
       let result = window.doJavaScript(titleJS);
       return /^\d+$/.test(result);
     });
