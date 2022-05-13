@@ -59,12 +59,19 @@ describe("Load plugin and make window", () => {
     const options = {
       shouldClearCache: true,
     };
+    let port;
     Testing.blockUntil(() => {
       let result = window.doJavaScript(titleJS);
-      return /^\d+$/.test(result);
+      console.log("result = " + result);
+      if (/^\d+$/.test(result)) {
+        port = result;
+        return true;
+      }
+      return false;
     });
-    console.log("TestConstants.HTML_URL, options = " + TestConstants.HTML_URL, options);
-    window.loadURL(TestConstants.HTML_URL, options);
+    console.log("port = " + port);
+    expect(/^\d+$/.test(port)).toBeTruthy();
+    window.loadURL(TestConstants.HTML_URL_FOR_PORT(port), options);
     let result = window.doJavaScript(titleJS);
     expect(result).toBe(TestConstants.HTML_TITLE);
     const newTitle = "Changed";
