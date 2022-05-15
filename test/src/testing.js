@@ -7,8 +7,8 @@ const Testing = {
     pollingInterval = Constants.POLLING_INTERVAL
   ) {
     const cycles = Math.max(timeout / pollingInterval, 1);
-    for (var i = 0; i <= cycles || condition(); i++) {
-      await new Promise((r) => setTimeout(r, pollingInterval));
+    for (var i = 0; !condition() && i <= cycles; i++) {
+      await new Promise((r) => setTimeout(r, pollingInterval * 1000));
     }
   },
 };

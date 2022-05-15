@@ -55,12 +55,12 @@ describe("Load plugin and make window", () => {
     window.loadURL(TestConstants.HTML_JQUERY_URL);
   });
 
-  test("Reload", () => {
+  test("Reload", async () => {
     const options = {
       shouldClearCache: true,
     };
     let port;
-    Testing.blockUntil(() => {
+    await Testing.blockUntil(() => {
       let result = window.doJavaScript(titleJS);
       console.log("result = " + result);
       if (/^\d+$/.test(result)) {
