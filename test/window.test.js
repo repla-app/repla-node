@@ -62,16 +62,18 @@ describe("Load plugin and make window", () => {
     let port;
     await Testing.blockUntil(() => {
       let result = window.doJavaScript(titleJS);
-      console.log("result = " + result);
       if (/^\d+$/.test(result)) {
         port = result;
         return true;
       }
       return false;
     });
-    console.log("port = " + port);
     expect(/^\d+$/.test(port)).toBeTruthy();
     window.loadURL(TestConstants.HTML_URL_FOR_PORT(port), options);
+    await Testing.blockUntil(() => {
+      let result = window.doJavaScript(titleJS);
+      return result === TestConstants.HTML_TITLE;
+    });
     let result = window.doJavaScript(titleJS);
     expect(result).toBe(TestConstants.HTML_TITLE);
     const newTitle = "Changed";
