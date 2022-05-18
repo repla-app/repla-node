@@ -1,5 +1,6 @@
 const Constants = require("../src/constants.js");
 const TestConstants = require("./src/testing-constants.js");
+const Testing = require("./src/testing.js");
 const Window = require("../src/window.js");
 const Repla = require("../src/repla.js");
 const fs = require("fs");
@@ -54,12 +55,26 @@ describe("Load plugin and make window", () => {
     window.loadURL(TestConstants.HTML_JQUERY_URL);
   });
 
-  test("Reload", () => {
+  test("Reload", async () => {
     const options = {
       shouldClearCache: true,
     };
-    window.loadURL(TestConstants.HTML_URL, options);
-    let result = window.doJavaScript(titleJS);
+    let port;
+    await Testing.blockUntil(() => {
+      let result = window.doJavaScript(titleJS);
+      if (/^\d+$/.test(result)) {
+        port = result;
+        return true;
+      }
+      return false;
+    });
+    expect(/^\d+$/.test(port)).toBeTruthy();
+    window.loadURL(TestConstants.HTML_URL_FOR_PORT(port), options);
+    let result;
+    await Testing.blockUntil(() => {
+      result = window.doJavaScript(titleJS);
+      return result === TestConstants.HTML_TITLE;
+    });
     expect(result).toBe(TestConstants.HTML_TITLE);
     const newTitle = "Changed";
     expect(newTitle).not.toBe(result);
