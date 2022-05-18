@@ -29,7 +29,7 @@ TestConstants.JS_DIRECTORY = path.join(DATA_DIRECTORY, "js");
 TestConstants.TITLE_JS_FILE = path.join(TestConstants.JS_DIRECTORY, "title.js");
 // URL
 function serverURL(port, path) {
-  return "http://127.0.0.1:" + port + " /" + path;
+  return "http://127.0.0.1:" + port + "/" + path;
 }
 TestConstants.HTML_URL_FOR_PORT = function(port) {
   return serverURL(port, HTML_FILENAME);

@@ -45,7 +45,7 @@ describe("Load plugin and make window", () => {
   });
 
   afterEach(() => {
-    // window.close();
+    window.close();
   });
 
   test("Load a file and URL", () => {
@@ -70,11 +70,11 @@ describe("Load plugin and make window", () => {
     });
     expect(/^\d+$/.test(port)).toBeTruthy();
     window.loadURL(TestConstants.HTML_URL_FOR_PORT(port), options);
+    let result;
     await Testing.blockUntil(() => {
-      let result = window.doJavaScript(titleJS);
+      result = window.doJavaScript(titleJS);
       return result === TestConstants.HTML_TITLE;
     });
-    let result = window.doJavaScript(titleJS);
     expect(result).toBe(TestConstants.HTML_TITLE);
     const newTitle = "Changed";
     expect(newTitle).not.toBe(result);
