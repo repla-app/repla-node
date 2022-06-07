@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: ci irc_started irc_finished test lint
+.PHONY: ci test lint
 
 ci: lint
 
